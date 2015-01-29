@@ -32,6 +32,10 @@ public class RegisteredUser extends IdentifiableNamedEntity implements
 
 	/** ******************************* **/
 
+	protected RegisteredUser() {
+		super();
+	}
+
 	public RegisteredUser(String username, String password, boolean enabled,
 			boolean accountNonExpired, boolean credentialsNonExpired,
 			boolean accountNonLocked, Set<BaseAuthority> authorities) {

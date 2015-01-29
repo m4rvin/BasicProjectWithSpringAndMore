@@ -14,6 +14,10 @@ public class BaseAuthority extends IdentifiableEntity implements
 	private static final long serialVersionUID = -4691121455918169040L;
 	private String authority;
 
+	protected BaseAuthority() {
+		super();
+	}
+
 	public BaseAuthority(String authority) {
 		super();
 		this.authority = authority;
