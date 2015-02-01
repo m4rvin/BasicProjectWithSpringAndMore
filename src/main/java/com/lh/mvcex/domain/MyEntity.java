@@ -1,7 +1,6 @@
 package com.lh.mvcex.domain;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Configurable;
 
@@ -9,11 +8,20 @@ import org.springframework.beans.factory.annotation.Configurable;
 @Configurable
 public class MyEntity extends IdentifiableEntity {
 
-	public MyEntity() {};
-	public MyEntity(String name) {
+	private String name;
+
+	protected String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	@NotNull
-	private String name;
+	public MyEntity() {
+	};
+
+	public MyEntity(String name) {
+		this.name = name;
+	}
 }

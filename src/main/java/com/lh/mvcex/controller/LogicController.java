@@ -1,20 +1,19 @@
 package com.lh.mvcex.controller;
 
-import com.lh.mvcex.domain.MyEntity;
-import com.lh.mvcex.repository.EntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+import com.lh.mvcex.domain.MyEntity;
+import com.lh.mvcex.repository.MyEntityRepository;
+
+@Service
 public class LogicController {
 	@Autowired
-	private EntityRepository entityRepository;
+	private MyEntityRepository myEntityRepository;
 
-	public void saveEntity(String name) {
+	public MyEntity saveEntity(String name) {
 		MyEntity cg = new MyEntity(name);
 		
-		entityRepository.save(cg);
+		return myEntityRepository.save(cg);
 	}
-	
-	
 }
